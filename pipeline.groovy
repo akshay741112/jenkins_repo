@@ -1,23 +1,26 @@
+//my pipeline
 pipeline {
-    agent
-
     stages {
         stage('pull') {
-            steps
-             git branch: 'main', credentialsId: 'Akshay_github', url: 'https://github.com/akshay741112/jenkins_test'
-             {
-                echo 'Hello World'
+            steps {
+               git branch: 'main', credentialsId: 'Akshay_github', url: 'https://github.com/akshay741112/jenkins_test'
+                echo 'pull done'
             }
         }
-    stage ('build')
-        steps {
-            echo "build 'buildd a new'"
-        } 
-
-    }
-    stage ('test')
+        stage('build') {
             steps {
-                 echo "test done"
+                echo 'build done'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'test done'
+            }
+        }
+            stage('deploy test') {
+            steps {
+                echo 'quality test done'
+            }
+        }
     }
 }
-
