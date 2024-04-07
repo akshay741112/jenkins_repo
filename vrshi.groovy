@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-                git branch: 'main', credentialsId: 'Akshay_github', url: 'https://github.com/akshay741112/jenkins_test'
+               git branch: 'main', url: 'https://github.com/akshay741112/jenkins_repo.git'
                 echo 'pull'
             }
         }
